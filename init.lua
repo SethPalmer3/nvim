@@ -38,18 +38,13 @@ if vim.g.vscode then
   }, {});
 else
   require('lazy').setup({
-    { 'loctvl842/monokai-pro.nvim' },
     {
-      "Exafunction/codeium.nvim",
-      dependencies = {
-        "nvim-lua/plenary.nvim",
-        "hrsh7th/nvim-cmp",
-      },
-      config = function()
-        require("codeium").setup({
-        })
-      end
+      "m4xshen/hardtime.nvim",
+      lazy = false,
+      dependencies = { "MunifTanjim/nui.nvim" },
+      opts = {},
     },
+    { 'loctvl842/monokai-pro.nvim' },
     { import = 'custom' },
     -- NOTE: This is where your plugins related to LSP can be installed.
     --  The configuration is done below. Search for lspconfig to find it below.
@@ -220,7 +215,6 @@ else
     },
   }
 
-
   -- [[ Configure nvim-cmp ]]
   -- See `:help cmp`
 
@@ -230,7 +224,7 @@ else
 
   vim.cmd [[command! Vterm execute 'vsplit | term']]
   vim.cmd [[command! Sterm execute 'split | term']]
-  vim.cmd [[colorscheme rose-pine-moon]]
+  vim.cmd [[colorscheme gruvbox]]
 end
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
